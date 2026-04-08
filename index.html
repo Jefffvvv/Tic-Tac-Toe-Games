@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe AI - PyScript</title>
+
+  <link rel="stylesheet" href="https://pyscript.net/releases/2026.1.1/core.css" />
+  <script type="module" src="https://pyscript.net/releases/2026.1.1/core.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <section class="panel">
+      <h1>Tic Tac Toe AI</h1>
+      <p class="subtitle">
+        Bermain melawan AI dengan <strong>Minimax</strong> atau
+        <strong>Alpha-Beta Pruning</strong>.
+      </p>
+
+      <div class="controls">
+        <div class="control-group">
+          <label for="algorithm">Algoritma AI</label>
+          <select id="algorithm">
+            <option value="minimax">Minimax</option>
+            <option value="alphabeta" selected>Alpha-Beta Pruning</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="depth">Depth Pencarian</label>
+          <select id="depth">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9" selected>9</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="player-symbol">Simbol Pemain</label>
+          <select id="player-symbol">
+            <option value="X" selected>X (jalan dulu)</option>
+            <option value="O">O (AI jalan dulu)</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label>&nbsp;</label>
+          <button id="new-game" class="btn-primary">Game Baru</button>
+        </div>
+      </div>
+
+      <div class="status-box">
+        <div id="status">Tekan "Game Baru" untuk mulai.</div>
+      </div>
+
+      <div class="board">
+        <button class="cell" id="cell-0" data-index="0"></button>
+        <button class="cell" id="cell-1" data-index="1"></button>
+        <button class="cell" id="cell-2" data-index="2"></button>
+        <button class="cell" id="cell-3" data-index="3"></button>
+        <button class="cell" id="cell-4" data-index="4"></button>
+        <button class="cell" id="cell-5" data-index="5"></button>
+        <button class="cell" id="cell-6" data-index="6"></button>
+        <button class="cell" id="cell-7" data-index="7"></button>
+        <button class="cell" id="cell-8" data-index="8"></button>
+      </div>
+    </section>
+
+    <aside class="panel">
+      <div class="stats-box">
+        <h2>Statistik AI</h2>
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="stat-title">Algoritma</div>
+            <div class="stat-value" id="stat-algo">-</div>
+          </div>
+          <div class="stat">
+            <div class="stat-title">Depth</div>
+            <div class="stat-value" id="stat-depth">-</div>
+          </div>
+          <div class="stat">
+            <div class="stat-title">Node</div>
+            <div class="stat-value" id="stat-nodes">-</div>
+          </div>
+          <div class="stat">
+            <div class="stat-title">Pruned</div>
+            <div class="stat-value" id="stat-pruned">-</div>
+          </div>
+          <div class="stat">
+            <div class="stat-title">Max Depth</div>
+            <div class="stat-value" id="stat-maxdepth">-</div>
+          </div>
+          <div class="stat">
+            <div class="stat-title">Waktu</div>
+            <div class="stat-value" id="stat-time">-</div>
+          </div>
+          <div class="stat stat-full">
+            <div class="stat-title">Nilai Evaluasi</div>
+            <div class="stat-value" id="stat-score">-</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <h3>Cara Main</h3>
+        <p>
+          Pilih algoritma, depth, dan simbol, lalu tekan
+          <strong>Game Baru</strong>. Jika memilih <strong>O</strong>,
+          AI akan jalan dulu karena <strong>X</strong> selalu memulai.
+        </p>
+      </div>
+    </aside>
+  </div>
+
+  <script type="py" src="app.py"></script>
+</body>
+</html>
