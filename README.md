@@ -39,14 +39,12 @@ Ikuti langkah berikut untuk menjalankan project di komputer kamu:
 4.  Jalankan perintah berikut:
 
 ```{=html}
-<!-- -->
 ```
     py -m http.server 8000
 
 5.  Buka browser dan akses:
 
 ```{=html}
-<!-- -->
 ```
     http://localhost:8000/
 
